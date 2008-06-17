@@ -12,6 +12,8 @@ WriteMakefile(
 	PL_FILES     => { },
 	PREREQ_PM    => {
 		'Test::use::ok' => 0,
+		'Mouse' => '0.04',
+		'Crypt::Random::Source' => 0,
 	},
 );
 
