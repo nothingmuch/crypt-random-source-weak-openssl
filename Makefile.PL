@@ -4,6 +4,8 @@ use strict;
 
 use ExtUtils::MakeMaker;
 
+warn "No OpenSSL executable could be found, consider installing one or this source will not be available for use" unless qx/which openssl/;
+
 WriteMakefile(
 	NAME         => 'Crypt::Random::Source::Weak::openssl',
 	VERSION_FROM => 'lib/Crypt/Random/Source/Weak/openssl.pm',
