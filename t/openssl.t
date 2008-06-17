@@ -4,9 +4,10 @@ use strict;
 use warnings;
 
 use Test::More;
+use File::Which;
 
 BEGIN {
-	plan skip_all => "no openssl command found" unless qx/which openssl/;
+	plan skip_all => "no openssl command found" unless File::Which::which("openssl");
 	plan 'no_plan';
 }
 
@@ -21,7 +22,7 @@ use ok 'Crypt::Random::Source::Weak::openssl';
 
 	cmp_ok( $p->default_chunk_size, '>=', 1, "got some chunk size" );
 
-	is_deeply( $p->command, [ qw(openssl rand), $p->default_chunk_size ], "command" );
+	is_deeply( $p->command, [ $p->openssl, qw(rand), $p->default_chunk_size ], "command" );
 
 	$p->openssl("foo");
 

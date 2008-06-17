@@ -16,6 +16,7 @@ WriteMakefile(
 		'Test::use::ok' => 0,
 		'Mouse' => '0.04',
 		'Crypt::Random::Source' => 0,
+		'File::Which' => 0,
 	},
 );
 

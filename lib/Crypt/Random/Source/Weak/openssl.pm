@@ -3,7 +3,13 @@
 package Crypt::Random::Source::Weak::openssl;
 use Squirrel;
 
+use File::Which qw(which);
+
 our $VERSION = "0.01";
+
+sub available {
+	which("openssl");
+}
 
 extends qw(
 	Crypt::Random::Source::Weak
@@ -12,7 +18,7 @@ extends qw(
 
 has openssl => (
 	is => "rw",
-	default => "openssl",
+	default => sub { which("openssl") },
 	trigger => sub { shift->clear_command },
 );
 
@@ -100,8 +106,8 @@ something much larger would probably be beneficial.
 
 =item openssl
 
-The C<openssl> executable to invoke. Defaults to C<openssl> (which means it
-must be in your C<PATH>).
+The C<openssl> executable to invoke. Defaults to what L<File::Which> found for
+C<openssl> (which means it must be in your C<PATH>).
 
 =back
 
