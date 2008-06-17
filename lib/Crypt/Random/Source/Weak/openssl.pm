@@ -5,6 +5,8 @@ use Squirrel;
 
 use File::Which qw(which);
 
+use namespace::clean -except => [qw(meta)];
+
 our $VERSION = "0.01";
 
 sub available {

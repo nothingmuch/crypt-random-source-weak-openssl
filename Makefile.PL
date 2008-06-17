@@ -17,6 +17,7 @@ WriteMakefile(
 		'Mouse' => '0.04',
 		'Crypt::Random::Source' => 0,
 		'File::Which' => 0,
+		'namespace::clean' => '0.08',
 	},
 );
 
