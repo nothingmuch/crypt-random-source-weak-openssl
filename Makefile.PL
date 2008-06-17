@@ -15,7 +15,7 @@ WriteMakefile(
 	PREREQ_PM    => {
 		'Test::use::ok' => 0,
 		'Mouse' => '0.04',
-		'Crypt::Random::Source' => 0,
+		'Crypt::Random::Source' => '0.02',
 		'File::Which' => 0,
 		'namespace::clean' => '0.08',
 	},
