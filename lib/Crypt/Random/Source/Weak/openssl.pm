@@ -7,7 +7,7 @@ use File::Which qw(which);
 
 use namespace::clean -except => [qw(meta)];
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 sub available {
 	which("openssl");
