@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package Crypt::Random::Source::Weak::openssl;
-use Squirrel;
+use Moose;
 
 use File::Which qw(which);
 
@@ -30,7 +30,9 @@ has default_chunk_size => (
 	trigger => sub { shift->clear_command },
 );
 
-has '+command' => (
+has 'command' => (
+	isa => "ArrayRef",
+	is  => "ro",
 	lazy_build => 1,
 	clearer => "clear_command",
 );
